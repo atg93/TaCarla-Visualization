@@ -50,26 +50,6 @@ TaCarla-Visualization/
 
 ## Data Layout
 
-The pipeline expects the following directory structure on disk:
-
-```
-<MAIN_PATH>/
-├── <TOWN_FOLDER>_sensors/        # Raw sensor recordings
-│   ├── <episode_001>/
-│   │   ├── front/                # Camera images
-│   │   ├── front_left/
-│   │   ├── front_right/
-│   │   ├── back/
-│   │   ├── back_left/
-│   │   ├── back_right/
-│   │   └── lidar/                # .las / .laz point clouds
-│   └── <episode_002>/
-│       └── ...
-└── <TOWN_FOLDER>_labels/         # Parquet annotation files
-    ├── <episode_001>.parquet
-    └── <episode_002>.parquet
-```
-
 Each Parquet file must contain these columns:
 
 | Column | Description |
@@ -81,8 +61,7 @@ Each Parquet file must contain these columns:
 | `detection_bev_image` | Relative path to BEV detection image |
 | `lidar` | Relative path to LiDAR file |
 | `front`, `front_left`, `front_right`, `back`, `back_left`, `back_right` | Relative paths to camera images |
-| `text_annotations` | Caption / text annotations (JSON string) |
-| `idf_score` | Scene importance/difficulty score |
+| `text_annotations` | Caption |
 
 ---
 
